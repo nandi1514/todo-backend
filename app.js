@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin:`${process.env.FRONTEND_URL}`,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -28,7 +28,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/task", taskRouter);
 
 app.get("/", (req, res) => {
-  res.send("Nice Working");
+  res.send("To Do App Backend is Working.");
 });
 
 // USING ERROR MIDDLEWARE
